@@ -1,0 +1,1 @@
+'use client';import {Printer} from 'lucide-react';export default function PrintButton(){return <button className="primary noPrint" onClick={()=>window.print()}><Printer size={18}/>Печать / сохранить PDF</button>}
