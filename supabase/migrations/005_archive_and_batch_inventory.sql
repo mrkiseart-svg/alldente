@@ -120,7 +120,7 @@ begin
   returning * into v_archive;
 
   -- order_items are removed by ON DELETE CASCADE.
-  delete from public.orders;
+  delete from public.orders where id is not null;
 
   return query select
     v_archive.id,

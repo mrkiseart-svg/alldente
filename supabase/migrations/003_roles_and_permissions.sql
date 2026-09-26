@@ -133,7 +133,7 @@ declare v_count bigint;
 begin
   if auth.uid() is null or public.current_user_role() not in ('manager','creator') then raise exception 'Manager access required'; end if;
   select count(*) into v_count from public.orders;
-  delete from public.orders;
+  delete from public.orders where id is not null;
   return v_count;
 end;
 $$;
